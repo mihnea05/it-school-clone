@@ -1,0 +1,285 @@
+/* adaugam variabile */
+:root {
+  --text-primary: #101d42;
+  --text-secondary: #fbb44c;
+  --text-dark: #2b2922;
+  --text-light: #eaeaea;
+  --text-white: #ffffff;
+
+  --bg-primary: #141e4c;
+  --bg-secondary: #dfedf5;
+  --bg-dark: #101d42;
+  --bg-light: #ffffff;
+
+  --button-color: #2bb686;
+
+  /* daca nu e specificat in document 1 rem = 16px */
+  --fs-large: 1rem;
+  --fs-medium: 0.875rem;
+  --fs-small: 0.75rem;
+
+  --spacing-xl: 2.625rem;
+  --spacing-large: 1.75rem;
+  --spacing-medium: 1rem;
+  --spacing-small: 0.5rem;
+  --spacing-tiny: 0.25rem;
+
+  --mobile-logo-height: 45px;
+}
+
+/* resetam proprietatile default */
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+/* necesar pt butoane pe mobil, in anumite situatii si browsere butonul poate sa nu isi pastreze forma fara acest css */
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  opacity: 1;
+}
+
+/* adaugam proprietati legate de font */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: var(--fs-medium);
+}
+
+/* adaugam proprietati legate de culori */
+h1 {
+  color: var(--text-light);
+}
+
+h2 {
+  color: var(--text-primary);
+}
+
+h3 {
+  color: var(--text-secondary);
+}
+
+p {
+  color: var(--text-dark);
+}
+
+/* clase reutilizabile */
+.container {
+  max-width: 1200px;
+  min-width: 320px;
+
+  margin: auto;
+
+  padding: var(--spacing-medium);
+}
+
+/* layout */
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+/* stilizarea navului */
+nav {
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+
+  background-color: var(--bg-primary);
+
+  z-index: 2;
+}
+
+nav .container {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo-link {
+  padding: 0;
+}
+
+nav img {
+  width: auto;
+  height: 60px;
+}
+
+/* meniul hamburger icon si checkboxul sunt doar pt versiunea de mobil */
+nav .menu-icon {
+  color: var(--text-light);
+  display: none;
+}
+
+nav input[type="checkbox"] {
+  display: none;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  position: relative;
+  /* nu uitam sa punem position relative pe elementul fata de care pozitional absolut */
+}
+nav a {
+  font-size: var(--fs-small);
+  /* transformam textul sa contina doar majuscule */
+  text-transform: uppercase;
+
+  color: var(--text-light);
+
+  padding: var(--spacing-medium);
+}
+
+nav .arrow-down-icon {
+  font-size: var(--fs-large);
+  /* in cazul acesta daca nu specificam top, left, right sau bottom va fipozitionat automat, iar in acest caz il pozitioneaza fix cum trebuie */
+  position: absolute;
+}
+
+nav a:hover {
+  color: var(--text-secondary);
+}
+
+nav .submenu {
+  /* initial submeniul nu e afisat. afisarea se facea la hover pe parinte */
+  display: none;
+
+  position: absolute;
+  top: calc(100% - var(--spacing-small));
+  left: var(--spacing-medium);
+
+  width: 10rem;
+  padding: var(--spacing-tiny) 0;
+
+  background-color: var(--bg-dark);
+
+  z-index: 3;
+}
+
+nav .submenu a {
+  padding: var(--spacing-tiny) var(--spacing-small);
+}
+
+/* atentie la acest selector display: block! el se va aplica pe elementul cu clasa submenu doar atunci cand printele cu clasa about-us are hover  */
+nav .about-us:hover .submenu {
+  display: block;
+}
+
+/* stilizarea pt mobil */
+@media (max-width: 768px) {
+  nav img {
+    height: var(--mobile-logo-height);
+  }
+
+  /* ascundem linkurile si afisam iconita de meniu la pachet cu checkboxul
+  de asemenea ascundem submeniu(intrucat am avea nevoie de Javascript ca sa il facem pe mobil) si iconita ce indica prezenta lui
+*/
+
+  nav ul {
+    display: none;
+  }
+
+  nav .menu-icon {
+    display: block;
+  }
+
+  nav .arrow-down-icon {
+    display: none;
+  }
+
+  nav .about-us:hover .submenu {
+    display: none;
+  }
+
+  nav .menu-icon-container {
+    position: relative;
+  }
+  /* un nou tip de selector selectam inputul care are un atribut specific */
+  nav input[type="checkbox"] {
+    /* pe mobil checkboxul trebuie sa fie prezent */
+    display: block;
+    /* practic punem checkboxul deasupra iconitei de meniu(hamburger icon) */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+    /* atentie opacity 0 doar ascunde vizual elementul , el este inca prezent in pagina */
+    opacity: 0;
+
+    margin: 0;
+
+    cursor: pointer;
+  }
+
+  /* doua tipuri de selector
+   1.input: checked -> elementul este stilizat daor daca checkboxul se afla in starea checked 
+   2. input:checked ~ ul -> aplica CSSul doar pe fratii(de acelasi nivel) lui input:checked aflati sub el ca ordine/
+   evident doar fratii care sunt ul
+
+   */
+  nav input[type="checkbox"]:checked ~ ul {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: calc(var(--mobile-logo-height) + 2 * var(--spacing-medium));
+    left: 0;
+
+    background-color: var(--bg-dark);
+  }
+}
+
+/*footer*/
+footer {
+  background-color: var(--bg-dark);
+}
+footer p {
+  font-size: var(--fs-small);
+  text-align: center;
+  color: var(--text-light);
+  padding: var(--spacing-medium) 0;
+}

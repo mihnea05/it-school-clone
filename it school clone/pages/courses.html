@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursuri</title>
+    <!--includem fonturile prima oara-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--pentru iconite folosim material icons-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <!--includem css urile noastre-->
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/courses.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a href="../index.html" class="logo-link">
+          <img src="../img/itschool-logo.png" alt="itschool logo" />
+        </a>
+
+        <div class="menu-icon-container">
+          <!--iconita de meniu + checkboxul sunt pt mobil  -->
+          <span class="material-symbols-outlined menu-icon">menu</span>
+          <input type="checkbox" />
+          <ul>
+            <li>
+              <a href="courses.html">Cursuri online</a>
+            </li>
+            <li class="about-us">
+              <a href="about.html">
+                Despre noi
+                <!-- iconita luata de pe material icons -->
+                <span class="material-symbols-outlined arrow-down-icon">
+                  arrow_drop_down
+                </span>
+              </a>
+              <!-- submeniu afisat la hover pe "despre noi" -->
+              <div class="submenu">
+                <a href="index.html">IT School</a>
+                <a href="about.html">Despre noi</a>
+              </div>
+            </li>
+
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="container hero-content">
+        <a href="#" class="hero-badge">ÎNCEPE CHIAR AZI CU 10% REDUCERE</a>
+
+        <h1 class="hero-title">
+          Cursuri care te pregătesc pentru o
+          <span class="hero-highlight">carieră reală</span> în IT
+        </h1>
+
+        <p class="hero-subtitle">+20 opțiuni de carieră în IT te așteaptă!</p>
+      </div>
+    </section>
+    <section class="cursuri">
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <div class="square-card">
+              <h3>Intro în IT</h3>
+              <p>Curs înregistrat</p>
+              <a href="#">Detalii →</a>
+              <path
+                d="M18.625 20.8125V41.3125H13.5V19.5312C13.5 17.4492 15.1816 15.6875 17.3438 15.6875H50.6562C52.7383 15.6875 54.5 17.4492 54.5 19.5312V41.3125H49.375V20.8125H18.625ZM58.3438 43.875C58.9844 43.875 59.625 44.5156 59.625 45.1562V46.4375C59.625 49.3203 57.3027 51.5625 54.5 51.5625H13.5C10.6172 51.5625 8.375 49.3203 8.375 46.4375V45.1562C8.375 44.5156 8.93555 43.875 9.65625 43.875H58.3438ZM37.6035 36.1074C37.043 35.4668 37.043 34.4258 37.6035 33.7852L40.3262 31.0625L37.6035 28.4199C37.043 27.7793 37.043 26.7383 37.6035 26.0977C38.2441 25.5371 39.2852 25.5371 39.9258 26.0977L43.7695 29.9414C44.3301 30.582 44.3301 31.623 43.7695 32.2637L39.9258 36.1074C39.6055 36.4277 39.2051 36.5078 38.8047 36.5078C38.3242 36.5078 37.9238 36.4277 37.6035 36.1074ZM30.3164 26.0977C30.877 26.7383 30.877 27.7793 30.3164 28.4199L27.5938 31.0625L30.3164 33.7852C30.877 34.4258 30.877 35.4668 30.3164 36.1074C29.9961 36.4277 29.5957 36.5078 29.1953 36.5078C28.7148 36.5078 28.3145 36.4277 27.9941 36.1074L24.1504 32.2637C23.5898 31.623 23.5898 30.582 24.1504 29.9414L27.9941 26.0977C28.6348 25.5371 29.6758 25.5371 30.3164 26.0977Z"
+                fill="white"
+              ></path>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="square-card">
+              <h3>AWS Cloud</h3>
+              <p>Live Online</p>
+              <a href="#">Detalii →</a>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="square-card">
+              <h3>Docker</h3>
+              <p>Live Online</p>
+              <a href="#">Detalii →</a>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="square-card">
+              <h3>Machine Learning</h3>
+              <p>Certificare MEN</p>
+              <a href="#">Detalii →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

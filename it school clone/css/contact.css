@@ -1,0 +1,127 @@
+/* HERO */
+.contact-hero {
+  background: #2f49ff;
+  color: #fff;
+  padding: 90px 0 110px;
+}
+
+.contact-hero .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.contact-hero h1 {
+  margin-top: 30px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: clamp(32px, 4vw, 64px);
+}
+
+.contact-hero p {
+  margin-top: 20px;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+/* SECTION */
+.contact-section {
+  background: #f7f9fc;
+  padding: 80px 0;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  padding: 0 16px;
+}
+
+/* CARDURI */
+.contact-info,
+.contact-form {
+  flex: 1;
+  background: #fff;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: 0.25s ease;
+}
+
+.contact-info:hover,
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* TEXT */
+.contact-info h2,
+.contact-form h2 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+  color: #555;
+}
+
+/* FORM */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUT STYLE */
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 15px;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* FOCUS EFFECT */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2f49ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(47, 73, 255, 0.15);
+}
+
+/* BUTTON */
+.contact-form button {
+  background: #2f49ff;
+  color: #fff;
+  border: none;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.contact-form button:hover {
+  background: #1c33cc;
+  transform: translateY(-2px);
+}
+
+/* OPTIONAL MAP */
+.contact-map {
+  margin-top: 50px;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 300px;
+  background: #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
